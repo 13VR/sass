@@ -6,7 +6,6 @@
 <div class='page'>
 
   <div class='header'>
-
     {{#with header}}
       <header class='header__content'>
         <div class='header__block'>
@@ -40,8 +39,23 @@
         </div>
       </header>
     {{/with}}
-
   </div>
+{{#with header}}
+  <div class="ad">
+  {{#with ad}}
+    <div class="ad__block">
+      <div class="ad__titile">
+        <p>{{title}}</p>
+      </div>
+      <div class="ad__link">
+        {{#with link}}
+          <a href="{{url}}" class="product__link">{{text}}</a>
+        {{/with}}
+      </div>
+    </div>
+  {{/with}}
+  </div>
+{{/with}}
 
   {{#with iphone_pro}}
     <section class='product product-big product--iphone-pro product--dark product--top'>
@@ -201,11 +215,11 @@
     {{#each footer}}
       <div class="footer__block">
         <p class="footer__title">{{title}}</p>
-        {{#each links}}
-          <div class="">
-          <a href="{{url}}" class="footer__link">{{text}}</a>
-          </div>
-        {{/each}}
+        <div class="footer__linkBlock">
+          {{#each links}}
+            <a href="{{url}}" class="footer__link">{{text}}</a>
+          {{/each}}
+        </div>
       </div>
     {{/each}}
   </footer>
